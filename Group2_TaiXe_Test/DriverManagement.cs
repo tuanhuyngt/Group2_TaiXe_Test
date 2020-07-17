@@ -29,6 +29,10 @@ namespace Group2_TaiXe_Test
             ele = webDriver.FindElement(By.XPath("/html/body/app-root/ng-component/div/div/div[2]/app-driver/app-driver-management-group2/div/div[2]/div/div[1]/form/div/input"));
             ele.SendKeys("2");
             ele.SendKeys(Keys.Enter);
+            Thread.Sleep(400);
+            ele = webDriver.FindElement(By.XPath("/html/body/app-root/ng-component/div/div/div[2]/app-driver/app-driver-management-group2/div/div[2]/div/div[2]/div/p-table/div/div/table/tbody/tr/td[3]/span"));
+            str = ele.Text;
+            Assert.IsTrue(str.Contains("2"));
             Thread.Sleep(1000);
         }
         [Test, Category("DirectButtonManagement"), Order(5)]
@@ -40,8 +44,12 @@ namespace Group2_TaiXe_Test
             Thread.Sleep(300);
             liTen.Click();
             ele = webDriver.FindElement(By.XPath("/html/body/app-root/ng-component/div/div/div[2]/app-driver/app-driver-management-group2/div/div[2]/div/div[1]/form/div/input"));
-            ele.SendKeys("u");
+            ele.SendKeys("Trần");
             ele.SendKeys(Keys.Enter);
+            Thread.Sleep(400);
+            ele = webDriver.FindElement(By.XPath("/html/body/app-root/ng-component/div/div/div[2]/app-driver/app-driver-management-group2/div/div[2]/div/div[2]/div/p-table/div/div/table/tbody/tr[1]/td[4]/span"));
+            str = ele.Text;
+            Assert.IsTrue(str.Contains("Trần"));
             Thread.Sleep(1000);
         }
         [Test, Category("DirectButtonManagement"), Order(6)]
@@ -55,6 +63,9 @@ namespace Group2_TaiXe_Test
             ele = webDriver.FindElement(By.XPath("/html/body/app-root/ng-component/div/div/div[2]/app-driver/app-driver-management-group2/div/div[2]/div/div[1]/form/div/input"));
             ele.SendKeys("B1");
             ele.SendKeys(Keys.Enter);
+            ele = webDriver.FindElement(By.XPath("/html/body/app-root/ng-component/div/div/div[2]/app-driver/app-driver-management-group2/div/div[2]/div/div[2]/div/p-table/div/div/table/tbody/tr[1]/td[5]/span"));
+            str = ele.Text;
+            Assert.IsTrue(str.Contains("B1"));
             Thread.Sleep(1000);
         }
 
